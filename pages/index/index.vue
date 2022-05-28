@@ -55,7 +55,7 @@
 					setTimeout(()=> {
 						this.topList = res;
 						this.loading = false
-					}, 2000)
+					}, 1000)
 				}
 			})
 		},

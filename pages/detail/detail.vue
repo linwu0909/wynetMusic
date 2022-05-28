@@ -7,16 +7,16 @@
 				<view class="detail-play" @tap="handleToPlay">
 					<image :src="songDetail.al.picUrl" :class="{'detail-play-run': isPlayRotate}"></image>
 					<text class="iconfont" :class="iconPlay"></text>
-					<view></view> 
+					<view></view>
 				</view>
-				
+
 				<view class="detail-lyric">
 					<view class="detail-lyric-wrap" :style="{ transform : 'translateY('+ - (lyricIndex -1) * 82 +'rpx)' }">
-						<view class="detail-lyric-item"  :class="{ active : lyricIndex == index }" v-for="(item,index) in songLyric" 
+						<view class="detail-lyric-item"  :class="{ active : lyricIndex == index }" v-for="(item,index) in songLyric"
 						:key="index">{{ item.lyric }}</view>
 					</view>
 				</view>
-				
+
 				<view class="detail-like">
 					<view class="detail-like-head">喜欢这首歌的人也听</view>
 					<view class="detail-like-item" v-for="(item, index) in songSimi" :key="index" @tap="handleToSimi(item.id)">
@@ -129,7 +129,7 @@
 						this.bgAudioManager = uni.getBackgroundAudioManager();
 						this.bgAudioManager.title = this.songDetail.name;
 						// #endif
-						
+
 						// #ifdef H5
 						if (!this.bgAudioManager) {
 							this.bgAudioManager = uni.createInnerAudioContext();
@@ -245,7 +245,7 @@
 		margin: auto;
 		background-size: cover;
 	}
-	
+
 	.detail-lyric {
 		font-size: 32rpx;
 		line-height: 82rpx;
@@ -263,7 +263,7 @@
 	.detail-lyric-item.active {
 		color: white;
 	}
-	
+
 	.detail-like {
 		margin: 0 30rpx;
 	}
@@ -309,7 +309,7 @@
 		font-size: 50rpx;
 		color: #c6c2bf;
 	}
-	
+
 	.detail-comment {margin: 0 30rpx;}
 	.detail-comment-head {
 		font-size: 36rpx;
